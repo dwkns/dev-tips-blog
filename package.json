@@ -19,7 +19,10 @@
     "clean": "rimraf dist build",
     "dev": "npm-run-all clean -p dev:* ",
     "dev:tailwind": "tailwind -i ./src/styles/tailwind.css -o ./src/styles/main.css --watch",
-    "dev:eleventy": "eleventy --serve --quiet"
+    "dev:eleventy": "eleventy --serve --quiet",
+    "build": "npm-run-all clean -p dev:* ",
+    "build:tailwind": "tailwind -i ./src/styles/tailwind.css -o ./src/styles/main.css --watch",
+    "build:eleventy": "eleventy"
   },
   "author": "dazza"
 }
