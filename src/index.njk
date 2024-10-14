@@ -1,0 +1,15 @@
+---
+layout: main.njk
+---
+
+<h1>Home</h1>
+<h2 class="">Posts</h2>
+<ul class="flex flex-col gap-2">
+  {% for post in posts %}
+    <li>
+      <a href="/{{ post.slug }}">
+        <p class="underline">{{ post.title }}</p>
+      </a>
+    </li>
+  {% endfor %}
+</ul>

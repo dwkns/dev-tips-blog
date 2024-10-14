@@ -1,0 +1,13 @@
+---
+pagination:
+    data: posts
+    size: 1
+    alias: post
+permalink: "/{{ post.title | slugify }}/index.html"
+layout: main.njk
+---
+
+<h1>{{post.title}}</h1>
+<div class="prose">
+  {{ post.content.parent | markdownify | safe  }}
+</div>
