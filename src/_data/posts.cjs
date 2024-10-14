@@ -1,10 +1,12 @@
+require('dotenv').config()
 const { Client } = require("@notionhq/client")
 const { NotionToMarkdown } = require('notion-to-md');
+
 var slugify = require('slugify')
 
 // Initializing a client
 const notion = new Client({
-  auth: "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"
+  auth: process.env.NOTION_API_KEY // "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"
 })
 
 const notionToMarkdown = new NotionToMarkdown({ notionClient: notion });
@@ -12,7 +14,7 @@ const notionToMarkdown = new NotionToMarkdown({ notionClient: notion });
 module.exports = async () => {
 
   const db = await notion.databases.query({
-    database_id: "11f257c5f6e380d4960df2986a2ca50e",
+    database_id: process.env.NOTION_DB_ID, // "11f257c5f6e380d4960df2986a2ca50e",
     filter: {
      or: [
       {

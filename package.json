@@ -7,6 +7,7 @@
     "@11ty/eleventy": "^3.0.0",
     "@notionhq/client": "^2.2.15",
     "@tailwindcss/typography": "^0.5.15",
+    "dotenv": "^16.4.5",
     "eleventy-plugin-console-plus": "^0.0.4",
     "markdown-it-class": "^1.0.0",
     "notion-to-md": "^3.1.1",
@@ -15,9 +16,6 @@
     "tailwindcss": "^3.4.13"
   },
   "type": "module",
-  "engines" : { 
-    "node" : ">=20.0.0"
-  },
   "scripts": {
     "clean": "rimraf dist build",
     "dev": "npm-run-all clean -p dev:* ",
