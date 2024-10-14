@@ -15,6 +15,9 @@
     "tailwindcss": "^3.4.13"
   },
   "type": "module",
+  "engines" : { 
+    "node" : ">=20.0.0"
+  },
   "scripts": {
     "clean": "rimraf dist build",
     "dev": "npm-run-all clean -p dev:* ",
