@@ -7,6 +7,7 @@
     "@11ty/eleventy": "^3.0.0",
     "@notionhq/client": "^2.2.15",
     "@tailwindcss/typography": "^0.5.15",
+    "dayjs": "^1.11.13",
     "dotenv": "^16.4.5",
     "eleventy-plugin-console-plus": "^0.0.4",
     "markdown-it-class": "^1.0.0",

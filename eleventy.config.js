@@ -22,8 +22,14 @@ export default async  (eleventyConfig)=> {
 
   // Copy Sanity Studio into build folder
   eleventyConfig.addPassthroughCopy({ "./src/styles/main.css": "./main.css" });
-
-  eleventyConfig.addPlugin(logToConsole);
+  const options = {
+    logToHtml: false, // log to HTML
+    logToTerminal: true, // log to terminal
+    colorizeConsole: true, // colorize the console output
+    escapeHTML: true, // escape HTML in the output
+    depth: 4 // depth of object to print
+	}
+  eleventyConfig.addPlugin(logToConsole, options);
 
 
   return {

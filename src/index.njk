@@ -1,15 +1,20 @@
 ---
 layout: main.njk
 ---
+<h1 class="mt-8 text-center text-4xl">dwkns</h1>
+<p class="text-center">A blog about business, code and UX</p>
 
-<h1>Home</h1>
-<h2 class="">Posts</h2>
-<ul class="flex flex-col gap-2">
+{# {% console posts, "Posts", {title: "Posts"} %} #}
+
+<ul class="flex flex-col gap-4 mt-10" >
   {% for post in posts %}
-    <li>
-      <a href="/{{ post.slug }}">
-        <p class="underline">{{ post.title }}</p>
+      <a class="hover:bg-orange-50" href="/{{ post.slug }}">
+        <li class="px-8 py-4 border border-gray-200 rounded-md min-h-32  text-center" >
+          <p class="text-sm font-light">{{post.date}}</p>
+          <p class="text-2xl font-bold"> {{ post.title }}</p>
+          <p class="text-left text-xl font-light"> {{ post.summary }}</p>
+         
+          </li>
       </a>
-    </li>
-  {% endfor %}
+  {% endfor %} 
 </ul>

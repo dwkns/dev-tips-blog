@@ -7,7 +7,8 @@ permalink: "/{{ post.title | slugify }}/index.html"
 layout: main.njk
 ---
 
-<h1>{{post.title}}</h1>
-<div class="prose">
-  {{ post.content.parent | markdownify | safe  }}
+<div class="prose mx-auto px-4 md:px-0">
+  <h1 class="mt-8 text-center">{{post.title}}</h1>
+  <p class="text-left text-xl font-light">{{ post.summary }}</p>
+  {{ post.content | markdownify | safe  }}
 </div>

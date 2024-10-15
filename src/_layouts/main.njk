@@ -2,21 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <link rel="stylesheet" href="/main.css">
     <title>Just a title</title>
   </head>
   <body>
-    <nav class="mx-auto container">
-      <ul class="flex flex-row gap-2">
-        <li><a href="/"><p class="underline">home</p></a></li>
-        {% for post in posts %}
-          <li><a href="/{{ post.slug }}"><p class="underline">{{ post.title }}</p></a></li>
-        {% endfor %}
-      </ul>
-    </nav>
-    <main class="mx-auto container" >
+    <main class="container mx-auto">
       {{ content | safe }}
     </main>
   </body>
