@@ -7,10 +7,6 @@ const md = markdownit().use(markdownItClass, {
 });
 
 
-
-
-
-
 export default async  (eleventyConfig)=> {
 
 

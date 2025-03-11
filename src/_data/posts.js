@@ -1,17 +1,13 @@
 import 'dotenv/config'
 import dayjs from 'dayjs'
 
-
-// const { Client } = require("@notionhq/client")
-// const { NotionToMarkdown } = require('notion-to-md');
 import { Client } from "@notionhq/client"
 import { NotionToMarkdown } from "notion-to-md"
 import slugify from "slugify"
-// var slugify = require('slugify')
 
 // Initializing a client
 const notion = new Client({
-  auth: process.env.NOTION_API_KEY // "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"
+  auth: process.env.NOTION_API_KEY 
 })
 
 const notionToMarkdown = new NotionToMarkdown({ notionClient: notion });
@@ -19,7 +15,7 @@ const notionToMarkdown = new NotionToMarkdown({ notionClient: notion });
 export default async () => {
 
   const db = await notion.databases.query({
-    database_id: process.env.NOTION_DB_ID, // "11f257c5f6e380d4960df2986a2ca50e",
+    database_id: process.env.NOTION_DB_ID, 
     filter: {
       or: [
         {
@@ -27,7 +23,7 @@ export default async () => {
           checkbox: { equals: false, },
         },
       ]
-    },
+    },    
     sorts: [
 	    {
 	      property: "Published",

@@ -6,13 +6,13 @@ layout: main.njk
 
 {# {% console posts, "Posts", {title: "Posts"} %} #}
 
-<ul class="flex flex-col gap-4 mt-10" >
+<ul class="flex flex-col gap-4 mt-10 max-w-4xl mx-auto" >
   {% for post in posts %}
       <a class="hover:bg-orange-50" href="/{{ post.slug }}">
         <li class="px-8 py-4 border border-gray-200 rounded-md min-h-32  text-center" >
           <p class="text-sm font-light">{{post.date}}</p>
           <p class="text-2xl font-bold"> {{ post.title }}</p>
-          <p class="text-left text-xl font-light"> {{ post.summary }}</p>
+          <p class="text-left text-xl font-light max-w-prose"> {{ post.summary }}</p>
          
           </li>
       </a>
