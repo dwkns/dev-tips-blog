@@ -1,6 +1,8 @@
 import logToConsole from 'eleventy-plugin-console-plus'
 import markdownit from 'markdown-it'
 import markdownItClass from 'markdown-it-class'
+import { execSync } from 'child_process'
+
 const md = markdownit().use(markdownItClass, {
   h2: [],
   p: [],
@@ -8,6 +10,16 @@ const md = markdownit().use(markdownItClass, {
 
 
 export default async  (eleventyConfig)=> {
+
+  eleventyConfig.addWatchTarget('src/styles/tailwind.css');
+  eleventyConfig.on("eleventy.after", () => {
+    execSync(
+      `npx @tailwindcss/cli -i ${'src/styles/tailwind.css'} -o ${'dist/styles.css'}`
+    );
+  });
+  eleventyConfig.setServerOptions({
+    watch: ['dist/styles.css']
+  })
 
 
   eleventyConfig.addFilter("markdownify", (str) => {

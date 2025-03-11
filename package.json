@@ -7,24 +7,21 @@
     "@11ty/eleventy": "^3.0.0",
     "@notionhq/client": "^2.2.15",
     "@tailwindcss/typography": "^0.5.15",
+    "@tailwindcss/cli": "^4.0.10",
+    "tailwindcss": "^4.0.10",
     "dayjs": "^1.11.13",
     "dotenv": "^16.4.5",
     "eleventy-plugin-console-plus": "^0.0.4",
     "markdown-it-class": "^1.0.0",
     "notion-to-md": "^3.1.1",
     "npm-run-all": "^4.1.5",
-    "rimraf": "^6.0.1",
-    "tailwindcss": "^3.4.13"
+    "rimraf": "^6.0.1"
   },
   "type": "module",
   "scripts": {
-    "clean": "rimraf dist build",
-    "dev": "npm-run-all clean -p dev:* ",
-    "dev:tailwind": "tailwind -i ./src/styles/tailwind.css -o ./src/styles/main.css --watch",
-    "dev:eleventy": "eleventy --serve --quiet",
-    "build": "npm-run-all clean -p build:* ",
-    "build:tailwind": "tailwind -i ./src/styles/tailwind.css -o ./src/styles/main.css ",
-    "build:eleventy": "eleventy"
+    "clean": "npx rimraf dist build",
+    "dev": "npm run clean && eleventy --serve --quiet",
+    "build": "npm run clean && eleventy --serve"
   },
   "author": "dazza"
 }

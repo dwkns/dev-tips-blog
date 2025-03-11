@@ -67,9 +67,10 @@ export default async () => {
     ))
   // remove any posts without titles (null)
   const posts = allPosts.filter(n => n)
-  for (const post of posts) {
-    console.log({title:post.title,date:post.date})
-  }
+ 
+  // for (const post of posts) {
+  //   console.log({title:post.title,date:post.date})
+  // }
   
   return posts 
 

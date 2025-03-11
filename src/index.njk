@@ -4,8 +4,6 @@ layout: main.njk
 <h1 class="mt-8 text-center text-4xl">dwkns</h1>
 <p class="text-center">A blog about business, code and UX</p>
 
-{# {% console posts, "Posts", {title: "Posts"} %} #}
-
 <ul class="flex flex-col gap-4 mt-10 max-w-4xl mx-auto" >
   {% for post in posts %}
       <a class="hover:bg-orange-50" href="/{{ post.slug }}">
